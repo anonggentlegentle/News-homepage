@@ -31,6 +31,7 @@ body {
   font-size: 1.5rem;
   font-family: "Inter", sans-serif;
   color: var(--color-dark-grayish-blue);
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -45,8 +46,65 @@ video {
   width: 100%;
 }
 
+.menu {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  display: flex;
+  justify-content: flex-end;
+
+  &__box {
+    background-color: var(--color-off-white);
+    padding: 2rem;
+    height: 100%;
+    width: 70%;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: var(--color-very-dark-blue);
+      transition: all 0.2s;
+    }
+
+    &:hover,
+    &:active {
+      color: var(--color-red);
+    }
+  }
+
+  &__backdrop {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: hsla(228, 5%, 18%, 0.473);
+  }
+}
+
 .main {
-  width: min(90%, 100rem);
+  width: min(90%, 110rem);
   margin: 2rem auto;
 
   display: flex;
@@ -304,7 +362,7 @@ video {
   }
 
   &__footer-illustration-box {
-    width: 40%;
+    width: 30%;
 
     @media only screen and (max-width: $bp-2) {
       width: 30%;
@@ -317,11 +375,12 @@ video {
   }
 
   &__footer-text-box {
-    width: 60%;
+    width: 70%;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // row-gap: 1rem;
 
     @media only screen and (max-width: $bp-1) {
       flex: 2;
@@ -343,6 +402,10 @@ video {
       font-size: 1.5rem;
       font-weight: 800;
     }
+  }
+
+  &__footer-text {
+    line-height: 1.7;
   }
 
   &__footer-link {
@@ -420,4 +483,21 @@ video {
       background-color: var(--color-very-dark-blue);
     }
   }
+
+  &--close {
+    background-color: transparent;
+    border: none;
+    width: max-content;
+    margin-bottom: 6rem;
+    cursor: pointer;
+
+    align-self: flex-end;
+  }
+}
+
+// state change style
+
+.unhide-menu {
+  opacity: 1;
+  visibility: visible;
 }

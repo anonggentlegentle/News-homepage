@@ -20,8 +20,34 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
+    <section class="menu">
+      <div class="menu__backdrop">&nbsp;</div>
+      <div class="menu__box">
+        <button class="btn btn--close">
+          <img
+            src="assets/images/icon-menu-close.svg"
+            alt="Close button"
+            class="menu__close-img"
+          />
+        </button>
+
+        <ul class="menu__list">
+          <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">New</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Popular</a></li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Trending</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Categories</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <main class="main">
       <header class="main__header">
         <div class="main__header-logo">

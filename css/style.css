@@ -28,6 +28,7 @@ body {
   font-size: 1.5rem;
   font-family: "Inter", sans-serif;
   color: var(--color-dark-grayish-blue);
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,8 +42,53 @@ video {
   width: 100%;
 }
 
+.menu {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: flex-end;
+}
+.menu__box {
+  background-color: var(--color-off-white);
+  padding: 2rem;
+  height: 100%;
+  width: 70%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+.menu__list {
+  list-style: none;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+.menu__link:link, .menu__link:visited {
+  text-decoration: none;
+  color: var(--color-very-dark-blue);
+  transition: all 0.2s;
+}
+.menu__link:hover, .menu__link:active {
+  color: var(--color-red);
+}
+.menu__backdrop {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsla(228, 5%, 18%, 0.473);
+}
+
 .main {
-  width: min(90%, 100rem);
+  width: min(90%, 110rem);
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -272,7 +318,7 @@ video {
   column-gap: 1.5rem;
 }
 .main__footer-illustration-box {
-  width: 40%;
+  width: 30%;
 }
 @media only screen and (max-width: 43.75em) {
   .main__footer-illustration-box {
@@ -284,7 +330,7 @@ video {
   min-height: 100%;
 }
 .main__footer-text-box {
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -308,6 +354,9 @@ video {
 .main__footer-text-box .heading--3 {
   font-size: 1.5rem;
   font-weight: 800;
+}
+.main__footer-text {
+  line-height: 1.7;
 }
 .main__footer-link:link, .main__footer-link:visited {
   color: var(--color-very-dark-blue);
@@ -368,6 +417,19 @@ video {
 }
 .btn--text:hover {
   background-color: var(--color-very-dark-blue);
+}
+.btn--close {
+  background-color: transparent;
+  border: none;
+  width: max-content;
+  margin-bottom: 6rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.unhide-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */
