@@ -62,7 +62,7 @@ video {
 
   &__box {
     background-color: var(--color-off-white);
-    padding: 2rem;
+    padding: 3rem 2rem;
     height: 100%;
     width: 70%;
     z-index: 2;
@@ -121,10 +121,13 @@ video {
 
   &__header-logo {
     width: 7%;
-    // height: 4rem;
+  }
+
+  &__header-logo-img {
+    width: 6rem;
 
     @media only screen and (max-width: $bp-1) {
-      width: 10%;
+      width: 5rem;
     }
 
     @media only screen and (max-width: $bp-2) {
@@ -132,13 +135,9 @@ video {
     }
   }
 
-  &__header-logo-img {
-    height: 100%;
-  }
-
   &__header-nav-box {
     list-style: none;
-    margin-left: auto;
+    // margin-left: auto;
 
     display: flex;
     column-gap: 4rem;
